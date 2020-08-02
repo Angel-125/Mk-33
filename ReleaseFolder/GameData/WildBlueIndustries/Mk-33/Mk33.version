@@ -1,0 +1,24 @@
+{
+    "NAME":"Mk-33",
+    "URL":"https://raw.githubusercontent.com/Angel-125/Mk-33/master/GameData/WildBlueIndustries/Mk-33/Mk33.version",
+    "DOWNLOAD":"https://github.com/Angel-125/Mk-33/releases",
+    "GITHUB":
+    {
+        "USERNAME":"Angel-125",
+        "REPOSITORY":"Mk-33",
+        "ALLOW_PRE_RELEASE":false
+    },
+    "VERSION":
+    {
+	"MAJOR":0,
+	"MINOR":8,
+	"PATCH":5,
+	"BUILD":0
+    },
+    "KSP_VERSION_MIN":
+    {
+        "MAJOR":1,
+        "MINOR":8,
+        "PATCH":0
+    }
+}
