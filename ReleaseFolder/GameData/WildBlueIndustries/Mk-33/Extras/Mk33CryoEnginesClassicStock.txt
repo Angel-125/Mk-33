@@ -1,0 +1,283 @@
+@PART[Mk33AftTank,Mk33FwdTank,Mk33Cockpit]:AFTER[zzz_CryoTanks]
+{
+	!MODULE[ModuleB9PartSwitch]:HAS[#moduleID[fuelSwitch]] {}
+	!MODULE[ModuleCryoTank] {}
+	MODULE
+	{
+		name = ModuleCryoTank
+		CoolingAllowed = False
+		CoolingEnabled = False
+		BOILOFFCONFIG
+		{
+			FuelName = Propellium
+			// in % per hr
+			BoiloffRate = 0.01
+			CoolingCost = 0.05
+		}
+	}
+
+	@MODULE[WBIOmniStorage]
+	{
+		OMNIRESOURCECOMBO
+		{
+			name = PropLox
+			RESOURCE
+			{
+				name = Propellium
+				ratio = 0.75
+				maxAmountMultiplier = 1.25
+			}
+
+			RESOURCE
+			{
+				name = Oxidizer
+				ratio = 0.25
+				maxAmountMultiplier = 1.25
+			}
+		}
+
+		@DEFAULT_RESOURCE[LiquidFuel]
+		{
+			@name = Propellium
+			@maxAmount = 28350
+		}
+		@DEFAULT_RESOURCE[Oxidizer]
+		{
+			@maxAmount = 9450
+		}
+	}
+
+	!RESOURCE[LiquidFuel] {}
+	!RESOURCE[Oxidizer] {}
+	RESOURCE
+	{
+		name = Propellium
+		amount = 28350
+		maxAmount = 28350	
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 9450
+		maxAmount = 9450
+	}
+}
+
+@PART[Mk33MidTank]:AFTER[zzz_CryoTanks]
+{
+	!MODULE[ModuleB9PartSwitch]:HAS[#moduleID[fuelSwitch]] {}
+	!MODULE[ModuleCryoTank] {}
+	MODULE
+	{
+		name = ModuleCryoTank
+		CoolingAllowed = False
+		CoolingEnabled = False
+		BOILOFFCONFIG
+		{
+			FuelName = Propellium
+			// in % per hr
+			BoiloffRate = 0.01
+			CoolingCost = 0.05
+		}
+	}
+
+	@MODULE[WBIOmniStorage]
+	{
+		OMNIRESOURCECOMBO
+		{
+			name = PropLox
+			RESOURCE
+			{
+				name = Propellium
+				ratio = 0.75
+				maxAmountMultiplier = 1.25
+			}
+
+			RESOURCE
+			{
+				name = Oxidizer
+				ratio = 0.25
+				maxAmountMultiplier = 1.25
+			}
+		}
+
+		@DEFAULT_RESOURCE[LiquidFuel]
+		{
+			@name = Propellium
+			@maxAmount = 53943.8
+		}
+		@DEFAULT_RESOURCE[Oxidizer]
+		{
+			@maxAmount = 17981.3
+		}
+	}
+
+	!RESOURCE[LiquidFuel] {}
+	!RESOURCE[Oxidizer] {}
+	RESOURCE
+	{
+		name = Propellium
+		amount = 53943.8
+		maxAmount = 53943.8
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 17981.3
+		maxAmount = 17981.3
+	}
+}
+
+@PART[wbiMk33FuelModule]:AFTER[zzz_CryoTanks]
+{
+	!MODULE[ModuleB9PartSwitch]:HAS[#moduleID[fuelSwitch]] {}
+	!MODULE[ModuleCryoTank] {}
+	MODULE
+	{
+		name = ModuleCryoTank
+		CoolingAllowed = False
+		CoolingEnabled = False
+		BOILOFFCONFIG
+		{
+			FuelName = Propellium
+			// in % per hr
+			BoiloffRate = 0.01
+			CoolingCost = 0.05
+		}
+	}
+
+	@MODULE[WBIOmniStorage]
+	{
+		OMNIRESOURCECOMBO
+		{
+			name = PropLox
+			RESOURCE
+			{
+				name = Propellium
+				ratio = 0.75
+				maxAmountMultiplier = 1.25
+			}
+
+			RESOURCE
+			{
+				name = Oxidizer
+				ratio = 0.25
+				maxAmountMultiplier = 1.25
+			}
+		}
+
+		@DEFAULT_RESOURCE[LiquidFuel]
+		{
+			@name = Propellium
+			@maxAmount = 2966.25
+		}
+		@DEFAULT_RESOURCE[Oxidizer]
+		{
+			@maxAmount = 988.75
+		}
+	}
+
+	!RESOURCE[LiquidFuel] {}
+	!RESOURCE[Oxidizer] {}
+	RESOURCE
+	{
+		name = Propellium
+		amount = 2966.25
+		maxAmount = 2966.25
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 988.75
+		maxAmount = 988.75
+	}
+}
+
+@PART[Mk33*]:HAS[@MODULE[ModuleRCSFX]]
+{
+	@MODULE[ModuleRCSFX]
+	{
+		@PROPELLANT[LiquidFuel]
+		{
+			@name = Propellium
+			@ratio = 3
+		}
+		@PROPELLANT[Oxidizer]
+		{
+			@ratio = 1
+		}
+		!atmosphereCurve {}
+		atmosphereCurve
+		{
+			key = 0 455
+			key = 1 84
+			key = 1.6 0.01 0 0
+		}
+	}
+}
+
+@PART[KR2200L]
+{
+	@MODULE[ModuleEnginesFX],0
+	{
+		@PROPELLANT[LiquidFuel]
+		{
+			@name = Propellium
+			@ratio = 3
+		}
+		@PROPELLANT[Oxidizer]
+		{
+			@ratio = 1
+		}
+		!atmosphereCurve {}
+		atmosphereCurve
+		{
+			key = 0 455
+			key = 1 388
+			key = 4 290
+			key = 20 0.01
+		}
+	}
+	@MODULE[ModuleEnginesFX],1
+	{
+		@PROPELLANT[LiquidFuel]
+		{
+			@name = Propellium
+			@ratio = 3
+		}
+		@PROPELLANT[Oxidizer]
+		{
+			@ratio = 1
+		}
+		!atmosphereCurve {}
+		atmosphereCurve
+		{
+			key = 0 455
+			key = 1 388
+			key = 4 290
+			key = 20 0.01
+		}
+	}
+}
+
+@PART[Mk33ProbeCore]
+{
+	@MODULE[ModuleResourceConverter]
+	{
+		@INPUT_RESOURCE[LiquidFuel]
+		{
+			@name = Propellium
+			@ratio = 0.033
+		}
+		@INPUT_RESOURCE[Oxidizer]
+		{
+			@ratio = 0.011
+		}
+		OUTPUT_RESOURCE
+		{
+			name = Water
+			ratio = 0.0061871
+			DumpExcess = true
+		}
+	}
+}

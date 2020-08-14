@@ -1,0 +1,190 @@
+@PART[Mk33AftTank,Mk33FwdTank,Mk33Cockpit]:AFTER[zzz_CryoTanks]
+{
+	!MODULE[ModuleB9PartSwitch]:HAS[#moduleID[fuelSwitch]] {}
+	!MODULE[ModuleCryoTank] {}
+	MODULE
+	{
+		name = ModuleCryoTank
+		CoolingAllowed = False
+		CoolingEnabled = False
+		BOILOFFCONFIG
+		{
+			FuelName = LqdHydrogen
+			// in % per hr
+			BoiloffRate = 0.01
+			CoolingCost = 0.05
+		}
+	}
+
+	!RESOURCE[LiquidFuel] {}
+	!RESOURCE[Oxidizer] {}
+	RESOURCE
+	{
+		name = LqdHydrogen
+		amount = 60750
+		maxAmount = 60750
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 4050
+		maxAmount = 4050
+	}
+}
+
+@PART[Mk33MidTank]:AFTER[zzz_CryoTanks]
+{
+	!MODULE[ModuleB9PartSwitch]:HAS[#moduleID[fuelSwitch]] {}
+	!MODULE[ModuleCryoTank] {}
+	MODULE
+	{
+		name = ModuleCryoTank
+		CoolingAllowed = False
+		CoolingEnabled = False
+		BOILOFFCONFIG
+		{
+			FuelName = LqdHydrogen
+			// in % per hr
+			BoiloffRate = 0.01
+			CoolingCost = 0.05
+		}
+	}
+
+	!RESOURCE[LiquidFuel] {}
+	!RESOURCE[Oxidizer] {}
+	RESOURCE
+	{
+		name = LqdHydrogen
+		amount = 115593.75
+		maxAmount = 115593.75
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 7706.25
+		maxAmount = 7706.25
+	}
+}
+
+@PART[wbiMk33FuelModule]:AFTER[zzz_CryoTanks]
+{
+	!MODULE[ModuleB9PartSwitch]:HAS[#moduleID[fuelSwitch]] {}
+	!MODULE[ModuleCryoTank] {}
+	MODULE
+	{
+		name = ModuleCryoTank
+		CoolingAllowed = False
+		CoolingEnabled = False
+		BOILOFFCONFIG
+		{
+			FuelName = LqdHydrogen
+			// in % per hr
+			BoiloffRate = 0.01
+			CoolingCost = 0.05
+		}
+	}
+
+	!RESOURCE[LiquidFuel] {}
+	!RESOURCE[Oxidizer] {}
+	RESOURCE
+	{
+		name = LqdHydrogen
+		amount = 11288.7
+		maxAmount = 11288.7
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 752.6
+		maxAmount = 752.6
+	}
+}
+
+@PART[Mk33*]:HAS[@MODULE[ModuleRCSFX]]
+{
+	@MODULE[ModuleRCSFX]
+	{
+		@PROPELLANT[LiquidFuel]
+		{
+			@name = LqdHydrogen
+			@ratio = 1.5
+		}
+		@PROPELLANT[Oxidizer]
+		{
+			@ratio = 0.1
+		}
+		!atmosphereCurve {}
+		atmosphereCurve
+		{
+			key = 0 455
+			key = 1 84
+			key = 1.6 0.01 0 0
+		}
+	}
+}
+
+@PART[KR2200L]
+{
+	@MODULE[ModuleEnginesFX],0
+	{
+		@PROPELLANT[LiquidFuel]
+		{
+			@name = LqdHydrogen
+			@ratio = 1.5
+		}
+		@PROPELLANT[Oxidizer]
+		{
+			@ratio = 0.1
+		}
+		!atmosphereCurve {}
+		atmosphereCurve
+		{
+			key = 0 455
+			key = 1 388
+			key = 4 290
+			key = 20 0.01
+		}
+	}
+	@MODULE[ModuleEnginesFX],1
+	{
+		@PROPELLANT[LiquidFuel]
+		{
+			@name = LqdHydrogen
+			@ratio = 1.5
+		}
+		@PROPELLANT[Oxidizer]
+		{
+			@ratio = 0.1
+		}
+		!atmosphereCurve {}
+		atmosphereCurve
+		{
+			key = 0 455
+			key = 1 388
+			key = 4 290
+			key = 20 0.01
+		}
+	}
+}
+
+@PART[Mk33ProbeCore]
+{
+	@MODULE[ModuleResourceConverter]
+	{
+		@INPUT_RESOURCE[LiquidFuel]
+		{
+			@name = LqdHydrogen
+			@ratio = 0.495
+		}
+		@INPUT_RESOURCE[Oxidizer]
+		{
+			@ratio = 0.033
+		}
+		OUTPUT_RESOURCE
+		{
+			name = Water
+			ratio = 0.0185613
+			DumpExcess = true
+		}
+	}
+}
