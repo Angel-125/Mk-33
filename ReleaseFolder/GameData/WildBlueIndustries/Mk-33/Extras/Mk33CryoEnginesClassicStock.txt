@@ -1,3 +1,6 @@
+// This patch converts the Mk-33 over to using cryogenic fuels from Classic Stock Resources.
+// It is calibrated to deliver 20.5 tonnes of payload to a 250km orbit in JNSQ.
+// To get there we fudge things a bit and give the tanks a bit more fuel capacity (1.6x LFO total units)
 @PART[Mk33AftTank,Mk33FwdTank,Mk33Cockpit]:AFTER[zzz_CryoTanks]
 {
 	!MODULE[ModuleB9PartSwitch]:HAS[#moduleID[fuelSwitch]] {}
@@ -5,8 +8,8 @@
 	MODULE
 	{
 		name = ModuleCryoTank
-		CoolingAllowed = False
-		CoolingEnabled = False
+		CoolingAllowed = true
+		CoolingEnabled = true
 		BOILOFFCONFIG
 		{
 			FuelName = Propellium
@@ -16,50 +19,19 @@
 		}
 	}
 
-	@MODULE[WBIOmniStorage]
-	{
-		OMNIRESOURCECOMBO
-		{
-			name = PropLox
-			RESOURCE
-			{
-				name = Propellium
-				ratio = 0.75
-				maxAmountMultiplier = 1.0
-			}
-
-			RESOURCE
-			{
-				name = Oxidizer
-				ratio = 0.25
-				maxAmountMultiplier = 1.0
-			}
-		}
-
-		@DEFAULT_RESOURCE[LiquidFuel]
-		{
-			@name = Propellium
-			@maxAmount = 48600
-		}
-		@DEFAULT_RESOURCE[Oxidizer]
-		{
-			@maxAmount = 16200
-		}
-	}
-
 	!RESOURCE[LiquidFuel] {}
 	!RESOURCE[Oxidizer] {}
 	RESOURCE
 	{
 		name = Propellium
-		amount = 48600
-		maxAmount = 48600
+		amount = 20760
+		maxAmount = 20760
 	}
 	RESOURCE
 	{
 		name = Oxidizer
-		amount = 16200
-		maxAmount = 16200
+		amount = 6920
+		maxAmount = 6920
 	}
 }
 
@@ -70,8 +42,8 @@
 	MODULE
 	{
 		name = ModuleCryoTank
-		CoolingAllowed = False
-		CoolingEnabled = False
+		CoolingAllowed = true
+		CoolingEnabled = true
 		BOILOFFCONFIG
 		{
 			FuelName = Propellium
@@ -81,50 +53,19 @@
 		}
 	}
 
-	@MODULE[WBIOmniStorage]
-	{
-		OMNIRESOURCECOMBO
-		{
-			name = PropLox
-			RESOURCE
-			{
-				name = Propellium
-				ratio = 0.75
-				maxAmountMultiplier = 1.0
-			}
-
-			RESOURCE
-			{
-				name = Oxidizer
-				ratio = 0.25
-				maxAmountMultiplier = 1.0
-			}
-		}
-
-		@DEFAULT_RESOURCE[LiquidFuel]
-		{
-			@name = Propellium
-			@maxAmount = 92475
-		}
-		@DEFAULT_RESOURCE[Oxidizer]
-		{
-			@maxAmount = 30825
-		}
-	}
-
 	!RESOURCE[LiquidFuel] {}
 	!RESOURCE[Oxidizer] {}
 	RESOURCE
 	{
 		name = Propellium
-		amount = 92475
-		maxAmount = 92475
+		amount = 49320
+		maxAmount = 49320
 	}
 	RESOURCE
 	{
 		name = Oxidizer
-		amount = 30825
-		maxAmount = 30825
+		amount = 16440
+		maxAmount = 16440
 	}
 }
 
@@ -135,8 +76,8 @@
 	MODULE
 	{
 		name = ModuleCryoTank
-		CoolingAllowed = False
-		CoolingEnabled = False
+		CoolingAllowed = true
+		CoolingEnabled = true
 		BOILOFFCONFIG
 		{
 			FuelName = Propellium
@@ -210,7 +151,7 @@
 		atmosphereCurve
 		{
 			key = 0 455
-			key = 1 84
+			key = 1 284
 			key = 1.6 0.01 0 0
 		}
 	}
@@ -220,7 +161,7 @@
 {
 	@MODULE[ModuleEnginesFX],0
 	{
-		@maxThrust = 2000
+		@maxThrust = 1400
 		@PROPELLANT[LiquidFuel]
 		{
 			@name = Propellium
@@ -234,7 +175,7 @@
 		atmosphereCurve
 		{
 			key = 0 455
-			key = 1 412
+			key = 1 415
 			key = 4 280
 			key = 20 0.01
 		}
@@ -253,8 +194,8 @@
 		!atmosphereCurve {}
 		atmosphereCurve
 		{
-			key = 0 458
-			key = 1 413
+			key = 0 468
+			key = 1 420
 			key = 4 290
 			key = 20 0.01
 		}
@@ -280,5 +221,27 @@
 			ratio = 0.0061871
 			DumpExcess = true
 		}
+	}
+}
+
+@PART[mk33Launchpad]
+{
+	MODULE:NEEDS[WildBlueTools]
+	{
+		name = WBIResourceDistributor
+	}
+
+	RESOURCE
+	{
+		name = Propellium
+		amount = 0
+		maxAmount = 200000
+	}
+
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 0
+		maxAmount = 61000
 	}
 }

@@ -1,3 +1,5 @@
+// This patch converts the Mk-33 over to using cryogenic fuels from Community Resource Pack.
+// It is calibrated to deliver 20.5 tonnes of payload to a 250km orbit in JNSQ.
 @PART[Mk33AftTank,Mk33FwdTank,Mk33Cockpit]:AFTER[zzz_CryoTanks]
 {
 	!MODULE[ModuleB9PartSwitch]:HAS[#moduleID[fuelSwitch]] {}
@@ -5,8 +7,8 @@
 	MODULE
 	{
 		name = ModuleCryoTank
-		CoolingAllowed = False
-		CoolingEnabled = False
+		CoolingAllowed = true
+		CoolingEnabled = true
 		BOILOFFCONFIG
 		{
 			FuelName = LqdHydrogen
@@ -21,14 +23,14 @@
 	RESOURCE
 	{
 		name = LqdHydrogen
-		amount = 60750
-		maxAmount = 60750
+		amount = 103800
+		maxAmount = 103800
 	}
 	RESOURCE
 	{
 		name = Oxidizer
-		amount = 4050
-		maxAmount = 4050
+		amount = 6920
+		maxAmount = 6920
 	}
 }
 
@@ -39,8 +41,8 @@
 	MODULE
 	{
 		name = ModuleCryoTank
-		CoolingAllowed = False
-		CoolingEnabled = False
+		CoolingAllowed = true
+		CoolingEnabled = true
 		BOILOFFCONFIG
 		{
 			FuelName = LqdHydrogen
@@ -55,14 +57,14 @@
 	RESOURCE
 	{
 		name = LqdHydrogen
-		amount = 115593.75
-		maxAmount = 115593.75
+		amount = 246600
+		maxAmount = 246600
 	}
 	RESOURCE
 	{
 		name = Oxidizer
-		amount = 7706.25
-		maxAmount = 7706.25
+		amount = 16440
+		maxAmount = 16440
 	}
 }
 
@@ -73,8 +75,8 @@
 	MODULE
 	{
 		name = ModuleCryoTank
-		CoolingAllowed = False
-		CoolingEnabled = False
+		CoolingAllowed = true
+		CoolingEnabled = true
 		BOILOFFCONFIG
 		{
 			FuelName = LqdHydrogen
@@ -89,14 +91,14 @@
 	RESOURCE
 	{
 		name = LqdHydrogen
-		amount = 11288.7
-		maxAmount = 11288.7
+		amount = 11280
+		maxAmount = 11280
 	}
 	RESOURCE
 	{
 		name = Oxidizer
-		amount = 752.6
-		maxAmount = 752.6
+		amount = 752
+		maxAmount = 752
 	}
 }
 
@@ -127,6 +129,7 @@
 {
 	@MODULE[ModuleEnginesFX],0
 	{
+		@maxThrust = 1400
 		@PROPELLANT[LiquidFuel]
 		{
 			@name = LqdHydrogen
@@ -140,7 +143,7 @@
 		atmosphereCurve
 		{
 			key = 0 455
-			key = 1 388
+			key = 1 415
 			key = 4 290
 			key = 20 0.01
 		}
@@ -159,8 +162,8 @@
 		!atmosphereCurve {}
 		atmosphereCurve
 		{
-			key = 0 455
-			key = 1 388
+			key = 0 468
+			key = 1 420
 			key = 4 290
 			key = 20 0.01
 		}
@@ -186,5 +189,27 @@
 			ratio = 0.0185613
 			DumpExcess = true
 		}
+	}
+}
+
+@PART[mk33Launchpad]
+{
+	MODULE:NEEDS[WildBlueTools]
+	{
+		name = WBIResourceDistributor
+	}
+
+	RESOURCE
+	{
+		name = LqdHydrogen
+		amount = 0
+		maxAmount = 400000
+	}
+
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 0
+		maxAmount = 61000
 	}
 }

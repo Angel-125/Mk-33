@@ -1,0 +1,67 @@
+OMNIRESOURCECOMBO
+{
+	name = SnacksFreshAir
+	RESOURCE
+	{
+		name = Snacks
+		ratio = 0.75
+	}
+
+	RESOURCE
+	{
+		name = FreshAir
+		ratio = 0.25
+	}
+}
+
+@PART[wbiMk33KrewModule]
+{
+	//1 snack per meal, 3 meals per day, per crew, 2 day supply
+	RESOURCE
+	{
+		name = Snacks
+		amount = 102
+		maxAmount = 102
+	}
+
+	RESOURCE
+	{
+		name = FreshAir
+		amount = 32
+		maxAmount = 32
+	}
+}
+
+@PART[wbiMk33Airlock]
+{
+	RESOURCE
+	{
+		name = FreshAir
+		amount = 4
+		maxAmount = 4
+	}
+
+	RESOURCE
+	{
+		name = Snacks
+		amount = 6
+		maxAmount = 6
+	}
+}
+
+@PART[Mk33Cockpit]
+{
+	RESOURCE
+	{
+		name = Snacks
+		amount = 204
+		maxAmount = 204
+	}
+
+	RESOURCE
+	{
+		name = FreshAir
+		amount = 64
+		maxAmount = 64
+	}
+}
