@@ -10,7 +10,7 @@ GameData
 
 Changes
 
-- Fixed issue where the Mk-33 Krew Module wasn't able to dock with the Clamp-O-Tron docking port (or any size1 port).
+- Added Waterfall effects support- thanks Roger! :)
 
 ---LICENSE---
 Art Assets, including .mu, .png, and .dds files are copyright 2020 by Michael Billard, All Rights Reserved.
