@@ -11,6 +11,7 @@ GameData
 Changes
 
 - Added Waterfall effects support- thanks Roger! :)
+- The Mk-33 Nose Cone is now animated and can open and close like its docking nose cone cousin.
 
 ---LICENSE---
 Art Assets, including .mu, .png, and .dds files are copyright 2020 by Michael Billard, All Rights Reserved.
@@ -20,7 +21,7 @@ Note that Wild Blue Industries is a ficticious entity
 created for entertainment purposes. It is in no way meant to represent a real entity.
 Any similarity to a real entity is purely coincidental.
 
-Source code copyright 2020 by Michael Billard (Angel-125)
+Source code copyright 2020-2022 by Michael Billard (Angel-125)
 
     This source code is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
