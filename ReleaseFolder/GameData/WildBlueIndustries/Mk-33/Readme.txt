@@ -10,8 +10,7 @@ GameData
 
 Changes
 
-- Added Waterfall effects support- thanks Roger! :)
-- The Mk-33 Nose Cone is now animated and can open and close like its docking nose cone cousin.
+- Fixed UVNormals on the lifting body parts- HUGE thanks Rodger! :)
 
 ---LICENSE---
 Art Assets, including .mu, .png, and .dds files are copyright 2020 by Michael Billard, All Rights Reserved.
