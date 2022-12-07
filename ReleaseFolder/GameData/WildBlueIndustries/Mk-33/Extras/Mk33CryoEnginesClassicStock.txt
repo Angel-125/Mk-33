@@ -1,93 +1,54 @@
 // This patch converts the Mk-33 over to using cryogenic fuels from Classic Stock Resources.
 // It is calibrated to deliver 20.5 tonnes of payload to a 250km orbit in JNSQ.
 // To get there we fudge things a bit and give the tanks a bit more fuel capacity (1.6x LFO total units)
-@PART[Mk33AftTank,Mk33FwdTank,Mk33Cockpit]:AFTER[zzz_CryoTanks]
+@PART[Mk33AftTank,Mk33FwdTank,Mk33Cockpit]
 {
-	!MODULE[ModuleB9PartSwitch]:HAS[#moduleID[fuelSwitch]] {}
-	!MODULE[ModuleCryoTank] {}
-	MODULE
+	@RESOURCE[LiquidFuel]
 	{
-		name = ModuleCryoTank
-		CoolingAllowed = true
-		CoolingEnabled = true
-		BOILOFFCONFIG
-		{
-			FuelName = Propellium
-			// in % per hr
-			BoiloffRate = 0.01
-			CoolingCost = 0.05
-		}
+		@name = Propellium
+		@amount = 20760
+		@maxAmount = 20760
 	}
-
-	!RESOURCE[LiquidFuel] {}
-	!RESOURCE[Oxidizer] {}
-	RESOURCE
+	@RESOURCE[Oxidizer]
 	{
-		name = Propellium
-		amount = 20760
-		maxAmount = 20760
-	}
-	RESOURCE
-	{
-		name = Oxidizer
-		amount = 6920
-		maxAmount = 6920
+		@amount = 6920
+		@maxAmount = 6920
 	}
 }
 
-@PART[Mk33MidTank]:AFTER[zzz_CryoTanks]
+@PART[Mk33AftTankHollow]
 {
-	!MODULE[ModuleB9PartSwitch]:HAS[#moduleID[fuelSwitch]] {}
-	!MODULE[ModuleCryoTank] {}
-	MODULE
+	@RESOURCE[LiquidFuel]
 	{
-		name = ModuleCryoTank
-		CoolingAllowed = true
-		CoolingEnabled = true
-		BOILOFFCONFIG
-		{
-			FuelName = Propellium
-			// in % per hr
-			BoiloffRate = 0.01
-			CoolingCost = 0.05
-		}
+		@name = Propellium
+		@amount = 13840.0692
+		@maxAmount = 13840.0692
 	}
-
-	!RESOURCE[LiquidFuel] {}
-	!RESOURCE[Oxidizer] {}
-	RESOURCE
+	RESOURCE[Oxidizer]
 	{
-		name = Propellium
-		amount = 49320
-		maxAmount = 49320
-	}
-	RESOURCE
-	{
-		name = Oxidizer
-		amount = 16440
-		maxAmount = 16440
+		@amount = 4613.3564
+		@maxAmount = 4613.3564
 	}
 }
 
-@PART[wbiMk33FuelModule]:AFTER[zzz_CryoTanks]
+@PART[Mk33MidTank]
 {
-	!MODULE[ModuleB9PartSwitch]:HAS[#moduleID[fuelSwitch]] {}
-	!MODULE[ModuleCryoTank] {}
-	MODULE
+	@RESOURCE[LiquidFuel]
 	{
-		name = ModuleCryoTank
-		CoolingAllowed = true
-		CoolingEnabled = true
-		BOILOFFCONFIG
-		{
-			FuelName = Propellium
-			// in % per hr
-			BoiloffRate = 0.01
-			CoolingCost = 0.05
-		}
+		@name = Propellium
+		@amount = 49320
+		@maxAmount = 49320
 	}
+	@RESOURCE[Oxidizer]
+	{
+		@amount = 16440
+		@maxAmount = 16440
+	}
+}
 
-	@MODULE[WBIOmniStorage]
+@PART[wbiMk33FuelModule]
+{
+	@MODULE[WBIOmniStorage]:NEEDS[WildBlueTools]
 	{
 		OMNIRESOURCECOMBO
 		{
@@ -118,20 +79,18 @@
 		}
 	}
 
-	!RESOURCE[LiquidFuel] {}
-	!RESOURCE[Oxidizer] {}
-	RESOURCE
+	@RESOURCE[LiquidFuel]
 	{
-		name = Propellium
-		amount = 2966.25
-		maxAmount = 2966.25
+		@name = Propellium
+		@amount = 2966.25
+		@maxAmount = 2966.25
 	}
-	RESOURCE
+	@RESOURCE[Oxidizer]
 	{
-		name = Oxidizer
-		amount = 988.75
-		maxAmount = 988.75
+		@amount = 988.75
+		@maxAmount = 988.75
 	}
+
 }
 
 @PART[Mk33*]:HAS[@MODULE[ModuleRCSFX]]
@@ -197,6 +156,31 @@
 			key = 0 468
 			key = 1 420
 			key = 4 290
+			key = 20 0.01
+		}
+	}
+}
+
+@PART[KR2200C]
+{
+	@MODULE[ModuleEnginesFX]
+	{
+		@maxThrust = 1400
+		@PROPELLANT[LiquidFuel]
+		{
+			@name = Propellium
+			@ratio = 3
+		}
+		@PROPELLANT[Oxidizer]
+		{
+			@ratio = 1
+		}
+		!atmosphereCurve {}
+		atmosphereCurve
+		{
+			key = 0 455
+			key = 1 415
+			key = 4 280
 			key = 20 0.01
 		}
 	}

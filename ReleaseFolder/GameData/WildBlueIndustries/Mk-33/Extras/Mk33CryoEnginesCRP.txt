@@ -1,104 +1,62 @@
 // This patch converts the Mk-33 over to using cryogenic fuels from Community Resource Pack.
 // It is calibrated to deliver 20.5 tonnes of payload to a 250km orbit in JNSQ.
-@PART[Mk33AftTank,Mk33FwdTank,Mk33Cockpit]:AFTER[zzz_CryoTanks]
+@PART[Mk33AftTank,Mk33FwdTank,Mk33Cockpit]
 {
-	!MODULE[ModuleB9PartSwitch]:HAS[#moduleID[fuelSwitch]] {}
-	!MODULE[ModuleCryoTank] {}
-	MODULE
+	@RESOURCE[LiquidFuel]
 	{
-		name = ModuleCryoTank
-		CoolingAllowed = true
-		CoolingEnabled = true
-		BOILOFFCONFIG
-		{
-			FuelName = LqdHydrogen
-			// in % per hr
-			BoiloffRate = 0.01
-			CoolingCost = 0.05
-		}
+		@name = LqdHydrogen
+		@amount = 103800
+		@maxAmount = 103800
 	}
-
-	!RESOURCE[LiquidFuel] {}
-	!RESOURCE[Oxidizer] {}
-	RESOURCE
+	@RESOURCE[Oxidizer]
 	{
-		name = LqdHydrogen
-		amount = 103800
-		maxAmount = 103800
-	}
-	RESOURCE
-	{
-		name = Oxidizer
-		amount = 6920
-		maxAmount = 6920
+		@amount = 6920
+		@maxAmount = 6920
 	}
 }
 
-@PART[Mk33MidTank]:AFTER[zzz_CryoTanks]
+@PART[Mk33AftTankHollow]
 {
-	!MODULE[ModuleB9PartSwitch]:HAS[#moduleID[fuelSwitch]] {}
-	!MODULE[ModuleCryoTank] {}
-	MODULE
+	@RESOURCE[LiquidFuel]
 	{
-		name = ModuleCryoTank
-		CoolingAllowed = true
-		CoolingEnabled = true
-		BOILOFFCONFIG
-		{
-			FuelName = LqdHydrogen
-			// in % per hr
-			BoiloffRate = 0.01
-			CoolingCost = 0.05
-		}
+		@name = Propellium
+		@amount = 69200.346
+		@maxAmount = 69200.346
 	}
-
-	!RESOURCE[LiquidFuel] {}
-	!RESOURCE[Oxidizer] {}
-	RESOURCE
+	@RESOURCE[Oxidizer]
 	{
-		name = LqdHydrogen
-		amount = 246600
-		maxAmount = 246600
-	}
-	RESOURCE
-	{
-		name = Oxidizer
-		amount = 16440
-		maxAmount = 16440
+		@amount = 4613.3564
+		@maxAmount = 4613.3564
 	}
 }
 
-@PART[wbiMk33FuelModule]:AFTER[zzz_CryoTanks]
+@PART[Mk33MidTank]
 {
-	!MODULE[ModuleB9PartSwitch]:HAS[#moduleID[fuelSwitch]] {}
-	!MODULE[ModuleCryoTank] {}
-	MODULE
+	@RESOURCE[LiquidFuel]
 	{
-		name = ModuleCryoTank
-		CoolingAllowed = true
-		CoolingEnabled = true
-		BOILOFFCONFIG
-		{
-			FuelName = LqdHydrogen
-			// in % per hr
-			BoiloffRate = 0.01
-			CoolingCost = 0.05
-		}
+		@name = LqdHydrogen
+		@amount = 246600
+		@maxAmount = 246600
 	}
+	@RESOURCE[Oxidizer]
+	{
+		@amount = 16440
+		@maxAmount = 16440
+	}
+}
 
-	!RESOURCE[LiquidFuel] {}
-	!RESOURCE[Oxidizer] {}
-	RESOURCE
+@PART[wbiMk33FuelModule]
+{
+	@RESOURCE[LiquidFuel]
 	{
-		name = LqdHydrogen
-		amount = 11280
-		maxAmount = 11280
+		@name = LqdHydrogen
+		@amount = 11280
+		@maxAmount = 11280
 	}
-	RESOURCE
+	@RESOURCE[Oxidizer]
 	{
-		name = Oxidizer
-		amount = 752
-		maxAmount = 752
+		@amount = 752
+		@maxAmount = 752
 	}
 }
 
@@ -165,6 +123,31 @@
 			key = 0 468
 			key = 1 420
 			key = 4 290
+			key = 20 0.01
+		}
+	}
+}
+
+@PART[KR2200C]
+{
+	@MODULE[ModuleEnginesFX]
+	{
+		@maxThrust = 1400
+		@PROPELLANT[LiquidFuel]
+		{
+			@name = LqdHydrogen
+			@ratio = 1.5
+		}
+		@PROPELLANT[Oxidizer]
+		{
+			@ratio = 0.1
+		}
+		!atmosphereCurve {}
+		atmosphereCurve
+		{
+			key = 0 455
+			key = 1 415
+			key = 4 280
 			key = 20 0.01
 		}
 	}

@@ -1,12 +1,12 @@
 ship = Mk-33 LFO
-version = 1.9.0
+version = 1.12.3
 description = 
 type = SPH
 size = 31.8728638,9.20020676,28.0298481
 steamPublishedFileId = 0
 persistentId = 870158012
 rot = 0,0,0,0
-missionFlag = WildBlueIndustries/000WildBlueTools/Agencies/WildBlueFlag
+missionFlag = Squad/Flags/retro
 vesselType = Debris
 OverrideDefault = False,False,False,False
 OverrideActionControl = 0,0,0,0
@@ -461,7 +461,6 @@ PART
 		{
 		}
 	}
-
 	RESOURCE
 	{
 		name = LiquidFuel
@@ -565,7 +564,6 @@ PART
 		{
 		}
 	}
-
 	RESOURCE
 	{
 		name = LiquidFuel
@@ -671,7 +669,6 @@ PART
 		{
 		}
 	}
-
 	MODULE
 	{
 		name = ModuleRCSFX
@@ -792,7 +789,6 @@ PART
 		{
 		}
 	}
-
 	RESOURCE
 	{
 		name = LiquidFuel
@@ -2651,7 +2647,6 @@ PART
 		{
 		}
 	}
-
 }
 PART
 {

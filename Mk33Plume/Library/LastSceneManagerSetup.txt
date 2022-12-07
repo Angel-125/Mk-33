@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/WBI Aerospike plumes.unity
+  isLoaded: 1
+  isActive: 1
