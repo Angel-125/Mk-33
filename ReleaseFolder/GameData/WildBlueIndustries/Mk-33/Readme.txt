@@ -8,21 +8,9 @@ GameData
 	WildBlueIndustries
 		Mk-33
 
-New Parts
-
-- Mk-33 Aft Tank (Hollow)
-- Mk-33 Cargo Ramp
-- KR-2200C "Tyranosaurus" Aerospike Engine
-
 Changes
 
-- Mk-33 now supports Community Category Kit.
-- Fixed mesh offset issues with the mid-tank.
-- Fixed landing gear lighting up the planet.
-- Fixed KSP complaining about missing part modules in the sample craft.
-- Fixed Module Manager patches in the Extras folder that support cryogenic propellants for Classic Stock Resources and Community Resource Pack.
-- Fixed Mk-33 Main Wing failing to surface attach when Wild Blue Decals is installed.
-NOTE: You'll need an updated version of Wild Blue Decals.
+- Fixed thruster ports not firing on the Aft Hollow Tank.
 
 ---LICENSE---
 Art Assets, including .mu, .png, and .dds files are copyright 2020-2022 by Michael Billard, All Rights Reserved.
