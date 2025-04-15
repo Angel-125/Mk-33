@@ -48,7 +48,7 @@
 
 @PART[wbiMk33FuelModule]
 {
-	@MODULE[WBIOmniStorage]:NEEDS[WildBlueTools]
+	@MODULE[WBIOmniStorage]:NEEDS[WBIResources]
 	{
 		OMNIRESOURCECOMBO
 		{
@@ -210,9 +210,9 @@
 
 @PART[mk33Launchpad]
 {
-	MODULE:NEEDS[WildBlueTools]
+	MODULE:NEEDS[WildBlueCore]
 	{
-		name = WBIResourceDistributor
+		name = ModuleFuelPump
 	}
 
 	RESOURCE
